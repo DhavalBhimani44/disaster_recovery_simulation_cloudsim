@@ -1,0 +1,62 @@
+Starting Disaster Recovery Simulation...
+Initialising...
+Starting CloudSim version 3.0
+PrimaryDC is starting...
+BackupDC is starting...
+Broker is starting...
+Entities started.
+0.0: Broker: Cloud Resource List received with 2 resource(s)
+0.0: Broker: Trying to Create VM #0 in PrimaryDC
+0.0: Broker: Trying to Create VM #1 in PrimaryDC
+0.0: Broker: Trying to Create VM #2 in PrimaryDC
+0.0: Broker: Trying to Create VM #3 in PrimaryDC
+[VmScheduler.vmCreate] Allocation of VM #2 to Host #0 failed by MIPS
+[VmScheduler.vmCreate] Allocation of VM #2 to Host #1 failed by MIPS
+[VmScheduler.vmCreate] Allocation of VM #3 to Host #0 failed by MIPS
+[VmScheduler.vmCreate] Allocation of VM #3 to Host #1 failed by MIPS
+0.1: Broker: VM #0 has been created in Datacenter #2, Host #0
+0.1: Broker: VM #1 has been created in Datacenter #2, Host #1
+0.1: Broker: Creation of VM #2 failed in Datacenter #2
+0.1: Broker: Creation of VM #3 failed in Datacenter #2
+0.1: Broker: Trying to Create VM #2 in BackupDC
+0.1: Broker: Trying to Create VM #3 in BackupDC
+0.2: Broker: VM #2 has been created in Datacenter #3, Host #0
+0.2: Broker: VM #3 has been created in Datacenter #3, Host #1
+0.2: Broker: Sending cloudlet 0 to VM #0
+0.2: Broker: Sending cloudlet 1 to VM #1
+0.2: Broker: Sending cloudlet 2 to VM #2
+0.2: Broker: Sending cloudlet 3 to VM #3
+0.2: Broker: Sending cloudlet 4 to VM #0
+0.2: Broker: Sending cloudlet 5 to VM #1
+40.2: Broker: Cloudlet 2 received
+40.2: Broker: Cloudlet 3 received
+80.2: Broker: Cloudlet 0 received
+80.2: Broker: Cloudlet 4 received
+80.2: Broker: Cloudlet 1 received
+80.2: Broker: Cloudlet 5 received
+80.2: Broker: All Cloudlets executed. Finishing...
+80.2: Broker: Destroying VM #0
+80.2: Broker: Destroying VM #1
+80.2: Broker: Destroying VM #2
+80.2: Broker: Destroying VM #3
+Broker is shutting down...
+Simulation: No more future events
+CloudInformationService: Notify all CloudSim entities for shutting down.
+PrimaryDC is shutting down...
+BackupDC is shutting down...
+Broker is shutting down...
+Simulation completed.
+Simulation completed.
+
+[SIMULATION] Simulating failure of VM 0 and recovery...
+[SIMULATION] Recovery complete. Re-executed failed cloudlets on backup VM.
+
+========== OUTPUT ==========
+Cloudlet ID    STATUS    DataCenter ID    VM ID    Time    Start Time    Finish Time
+    2        SUCCESS        3            2        40    0.2    40.2
+    3        SUCCESS        3            3        40    0.2    40.2
+    0        SUCCESS        2            0        80    0.2    80.2
+    4        SUCCESS        2            0        80    0.2    80.2
+    1        SUCCESS        2            1        80    0.2    80.2
+    5        SUCCESS        2            1        80    0.2    80.2
+Disaster Recovery Simulation completed successfully!
