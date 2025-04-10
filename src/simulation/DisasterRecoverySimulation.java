@@ -40,6 +40,7 @@ public class DisasterRecoverySimulation {
 
             printCloudletList(completedCloudlets);
             Log.printLine("Disaster Recovery Simulation completed successfully!");
+            Log.printLine("CI/CD Pipeline Test: ✅ Simulation executed successfully!");
 
         } catch (Exception e) {
             e.printStackTrace();
