@@ -22,7 +22,7 @@ jobs:
 
     - name: Compile Simulation Code
       run: |
-        mkdir out
+        mkdir -p out
         javac -cp lib/cloudsim-3.0.3.jar -d out src/simulation/DisasterRecoverySimulation.java
 
     - name: Run Simulation
