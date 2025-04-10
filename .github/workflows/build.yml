@@ -1,0 +1,30 @@
+name: CI/CD for Disaster Recovery Simulation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Java 23
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '23'
+
+    - name: Compile Simulation Code
+      run: |
+        mkdir out
+        javac -cp lib/cloudsim-3.0.3.jar -d out src/simulation/DisasterRecoverySimulation.java
+
+    - name: Run Simulation
+      run: |
+        java -cp "lib/cloudsim-3.0.3.jar:out" simulation.DisasterRecoverySimulation
