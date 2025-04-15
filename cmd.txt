@@ -1,0 +1,3 @@
+javac -cp lib/cloudsim-3.0.3.jar -d out src/simulation/DisasterRecoverySimulation.java
+
+java -cp "lib/cloudsim-3.0.3.jar;out" simulation.DisasterRecoverySimulation
